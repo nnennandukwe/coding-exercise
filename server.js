@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const fetch = require("node-fetch");
 var http = require('http');
 var fs = require('fs');
+var axios = require('axios');
 
 var port = process.env.PORT || 3001;
 
@@ -26,7 +27,10 @@ app.get('/', function(req,res){
   res.render('../src/views/pages/index.ejs')
 });
 
-fetch('http://api.icndb.com/').then(function(response){return response.json()
-}).catch(function(err){
-  console.log("unsuccessful request.")
-});
+axios.get('http://api.icndb.com/jokes/random')
+      .then(function(response) {
+        console.log(response.data)
+      })
+      .catch(function(error) {
+        console.log(error);
+      })

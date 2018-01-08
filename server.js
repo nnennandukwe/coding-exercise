@@ -27,6 +27,7 @@ app.get('/', function(req,res){
   res.render('../src/views/pages/index.ejs')
 });
 
+// load API check
 axios.get('http://api.icndb.com/jokes/random')
     .then(function(response,
         data=response.data,

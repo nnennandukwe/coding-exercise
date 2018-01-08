@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <% include ./_fonts %>
-
   </head>
   <body>
     <style type="text/css">
@@ -43,11 +42,11 @@
       width:85%;
       padding:2%;
       margin-top:7%;
-      height:100px;
     }
     .cta-quote-message{
       float:left;
       font-size: 16px;
+      font-weight:lighter;
       color:white;
       font-family:'Roboto Slab';
       height:100px;
@@ -139,6 +138,18 @@
       font-weight:bold;
     }
 
+    @media only screen and (min-width: 700px) {
+      .cta-quote-block{
+        height:300px;
+      }
+    }
+
+    @media only screen and (min-width: 450px){
+      .genre-nav span,
+      .year-nav span{
+        text-align:center;
+      }
+    }
     </style>
   </body>
 </html>

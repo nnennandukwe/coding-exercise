@@ -18,7 +18,6 @@ function displayJoke(){
 }
 
 //print out filterable content from data.json file
-// sort json data
 var mediaList = document.getElementById("mediaList");
 var eachDisplay = document.getElementById("eachDisplay");
 var li = document.createElement("li");
@@ -32,8 +31,5 @@ fetch('./data/data.json')
       var title = json.media[i].title;
       var year = json.media[i].year;
       var poster = json.media[i].poster;
-      var addTitle = document.createTextNode(title+ " \n");
-      var addYear = document.createTextNode(year+ " \n");
-      eachDisplay.appendChild(addTitle);
-      eachDisplay.appendChild(addYear);
+      var genre = json.media[i].genre;
     }});

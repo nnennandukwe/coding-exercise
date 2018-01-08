@@ -28,9 +28,12 @@ app.get('/', function(req,res){
 });
 
 axios.get('http://api.icndb.com/jokes/random')
-      .then(function(response) {
-        console.log(response.data)
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
+    .then(function(response,
+        data=response.data,
+        joke=response.data.value.joke
+      ) {
+      console.log('random joke: ',joke)
+    })
+    .catch(function(error) {
+      console.log(error);
+    });

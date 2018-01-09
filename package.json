@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
+    "concurrently": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
     "client": "node start-client.js"
   },

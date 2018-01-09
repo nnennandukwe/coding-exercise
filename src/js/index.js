@@ -1,8 +1,8 @@
-console.log("hello,world!")
+console.log("hello, world!")
 
 // generating Chuck Norris quotes with Axios API call
-var getJoke = document.getElementById("generateJoke");
-var quoteDiv = document.getElementById("quoteDiv");
+let getJoke = document.getElementById("generateJoke");
+let quoteDiv = document.getElementById("quoteDiv");
 getJoke.onclick = displayJoke;
 
 function displayJoke(){
@@ -18,18 +18,40 @@ function displayJoke(){
 }
 
 //print out filterable content from data.json file
-var mediaList = document.getElementById("mediaList");
-var eachDisplay = document.getElementById("eachDisplay");
-var li = document.createElement("li");
-var img = document.createElement("img");
+let mediaList = document.getElementById("mediaList");
+let eachDisplay = document.getElementById("eachDisplay");
+
+let allTitles = [];
+let allYears = [];
+let allGenres = [];
 
 fetch('./data/data.json')
   .then(response => response.json())
   .then(function(json){
     for(i=0;i<json.media.length;i++){
-      console.log(json.media[i]);
-      var title = json.media[i].title;
-      var year = json.media[i].year;
-      var poster = json.media[i].poster;
-      var genre = json.media[i].genre;
+      //console.log(json.media[i]);
+      let title = json.media[i].title;
+      let year = json.media[i].year;
+      let poster = json.media[i].poster;
+      let genre = json.media[i].genre;
+      let type = json.media[i].type;
+
+    // when user clicks on a filter, only data featuring that particular
+    // filter appears
+    // e.g. if user clicks movie radio button
+    // if (this.type !== "movie"){
+    //    display:none
+    //}
+
     }});
+
+let clearLink = document.getElementById("clearLink");
+let movieBtn = document.getElementById("movieBtn");
+let bookBtn = document.getElementById("bookBtn");
+clearLink.onclick = clearFilters;
+
+// clear filters function
+function clearFilters(){
+  movieBtn.checked = false;
+  bookBtn.checked = false;
+}

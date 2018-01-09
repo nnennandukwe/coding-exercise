@@ -5,7 +5,7 @@ These notes will be read by HubSpot developers. Drop us a line!
 ## Given more time, what would you have done differently?
 
 # Logic => EJS
-If I had had more time, I would have focused more on the necessity of the logic behind the filterable content portions of the project. I was interested in seeing how I would display the navigation menus for the user to be able to check a genre or year filter in order to display the information of the given/filtered content. Also, I would have liked to implement the sorted data algorithm so the JSON data would be alphabetized according to titles of the media content.
+If I had had more time, I would have focused more on the necessity of the logic behind the filterable content portions of the project. I was interested in seeing how I would display the navigation menus for the user to be able to check a genre or year filter in order to display the information of the given/filtered content. Also, I would have liked to implement the sorted data algorithm so the JSON data would be alphabetized according to titles of the media content. I wrote the code for the clear filters function and there's room for modification and optimization of that in addition to the filterable content menus.
 
 # Build => Webpack
 I would like to have utilized Webpack for the build process of the site. I believe it would have brought the project together in a more seamless, cohesive manner.
@@ -19,16 +19,16 @@ I would like to have built the CSS with Sass preprocessor in order to create var
 # Responsiveness
 Playing around more with the design decision of how the search bar should look on smaller viewports like phones and tablets would be interesting when considering user experience. I would like to have tested different systems/grids to see what would most likely make sense for those particular, conventional device-width parameters.
 
-# ESLint
-I set up ESLint to assist me in the build process towards the end of this project's development.
+# ESLint & EJS Lint
+I installed ESLint for build processes towards the end of this project's development.
 
 ## Is there anything else you'd like to let us know?
 
 # Acknowledgements
-I greatly enjoyed the process! Thank you so much for providing me with the opportunity to partake in this web development project! I found some exciting tools to implement into the development process and I utilized a few of them here. `nodemon` was pretty useful for me, as I utilized it to refresh the project without having to kill the server repetitively. It regenerates as soon as a change is saved in any of the files. I found this helpful and it made the build process less arduous. Also, I actually learned more about the versatility and robust nature of Express that directly impacts the front-end "templating", which was such a valuable experience to me, as I utilize Express everyday for Web App Engineering and Data Visualizations.
+I greatly enjoyed the process! Thank you so much for providing me with the opportunity to partake in this web development project! I found some exciting tools to implement into the development process and I utilized a few of them here. `nodemon` was pretty useful for me, as I utilized it to refresh the project without having to kill the server repetitively. It regenerates as soon as a change is saved in any of the files. I found this helpful and it made the build process less arduous. Also, I actually learned more about the versatility and robust nature of Express that directly impacts the front-end "templating", which was such a valuable experience to me, as I utilize Express everyday for Web App and Data Visualization Engineering.
 
 # On the Instructions
-I found the instructions for the web project to be interesting. Having to maneuver through the design structure of the files while adhering to the rules of not manipulating the DOM (which would be the easiest alternative to hard-coding additional HTML tags into the EJS partials files) led me to expand and modify my approach to the development process overall.
+I found the instructions for the web project to be interesting. Having to maneuver through the design structure of the files while adhering to the rules of not manipulating the DOM (which would be the easiest alternative to hard-coding additional HTML tags into the EJS partials files) led me to expand and modify my approach to the development process overall. I was also slightly perplexed about the filterable content dropdown menus and the HTML tags that would be associated with those. I didn't interpret the `_filterable-content.ejs` file in a way in which the dropdown menus would be designed within, primarily due to the structure of the existing HTML tags. If it made (more) sense to create a separate file, (e.g. a `_dropdowns.ejs`) then I would have created a partial that would host the dropdown menus for `genres` and `year`, set to `display:none;` by default. Upon the mouse hovering (`:hover`) over the Genres and Years divs, the display CSS property value would change so the user would see the filter options available. Functions would be tied to the input type fields that would trigger visibility of the content based upon the `genres mediadata.media[i].genre` sub-array iterations on all individual media elements.
 
 # Tools
 This project encouraged me to research and explore different set up combinations with the tools I interacted with thus far to build what was made. The practicality of combining React, Node, Express, and while utilizing template systems like EJS and preprocessors like Sass helped me to develop better system intuition for future development projects. This is what inspired me to install `concurrently`, the dependency that allowed Webpack dev server to talk to the API server on different ports.

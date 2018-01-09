@@ -35,10 +35,18 @@
 	<div>
 		<div>
 			<div>
-				<ul>
+				<ul class="media-content-list">
 					<% for (var i=0;i<JSON.stringify(mediadata.media.length);i++){ %>
 						<% let poster = decodeURIComponent(mediadata.media[i].poster) %>
-						<li> <img src=<%= poster %> /> </li>
+						<% let title = mediadata.media[i].title %>
+						<% let year = mediadata.media[i].year %>
+						<% let genres = mediadata.media[i].genre %>
+						<li>
+							<img src=<%= poster %> />
+							<%= title %>
+							(<%= year %>)
+							Genres: <%= genres %>
+						</li>
 					<% }; %>
 				</ul>
 			</div>

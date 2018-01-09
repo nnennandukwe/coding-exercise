@@ -21,28 +21,12 @@ function displayJoke(){
 let mediaList = document.getElementById("mediaList");
 let eachDisplay = document.getElementById("eachDisplay");
 
-let allTitles = [];
-let allYears = [];
-let allGenres = [];
-
+// what fetching the data would look like from the index.js file
 fetch('./data/data.json')
   .then(response => response.json())
   .then(function(json){
     for(i=0;i<json.media.length;i++){
-      //console.log(json.media[i]);
-      let title = json.media[i].title;
-      let year = json.media[i].year;
-      let poster = json.media[i].poster;
-      let genre = json.media[i].genre;
-      let type = json.media[i].type;
-
-    // when user clicks on a filter, only data featuring that particular
-    // filter appears
-    // e.g. if user clicks movie radio button
-    // if (this.type !== "movie"){
-    //    display:none
-    //}
-
+      console.log(json.media[i]);
     }});
 
 let clearLink = document.getElementById("clearLink");

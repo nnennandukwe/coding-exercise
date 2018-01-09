@@ -5,11 +5,11 @@
 				<div class="upper-row-nav">
 					<div class="genre-nav">
 						<span>Genre &or;</span>
-						<div class="genre-menu"></div>
+						<div></div>
 					</div>
 					<div class="year-nav">
 						<span>Year &or;</span>
-						<div class="year-menu"></div>
+						<div></div>
 					</div>
 					<div class="search-bar">
 						<input type="text" class="search-field">
@@ -25,7 +25,7 @@
 						<label>Books</label>
 					</div>
 					<div class="clear-filter-box">
-						<a href="" class="clear-filter-link" id="clearLink">Clear filters</a>
+						<a class="clear-filter-link" id="clearLink">Clear filters</a>
 					</div>
 				</div>
 			</div>
@@ -35,7 +35,12 @@
 	<div>
 		<div>
 			<div>
-				<ul></ul>
+				<ul>
+					<% for (var i=0;i<JSON.stringify(mediadata.media.length);i++){ %>
+						<% let poster = decodeURIComponent(mediadata.media[i].poster) %>
+						<li> <img src=<%= poster %> /> </li>
+					<% }; %>
+				</ul>
 			</div>
 		</div>
 	</div>

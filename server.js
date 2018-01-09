@@ -3,9 +3,11 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const fetch = require("node-fetch");
+const ejsLint = require('ejs-lint');
 var http = require('http');
 var fs = require('fs');
 var axios = require('axios');
+
 
 var port = process.env.PORT || 3001;
 
@@ -18,6 +20,7 @@ app.listen(port, () => {
 });
 
 app.set('view engine', 'ejs');
+app.locals.mediadata = require('./src/js/data/data.json');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
